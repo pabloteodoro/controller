@@ -19,7 +19,7 @@ export function Header() {
                 </Link>
 
                 <button>
-                    <FiLogOut size={26} color="4b5563"/>
+                    <FiLogOut size={26} color="#4b5563"/>
                 </button>
             </div>
             </div>
