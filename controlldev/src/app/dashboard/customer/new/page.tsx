@@ -1,7 +1,18 @@
 import { Container } from "@/components/container";
 import Link from "next/link";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
+import { redirect } from "next/navigation";
+import { NewCustomerForm } from "../components/form";
 
-export default function NewCustomer() {
+export default async function NewCustomer() {
+
+      const session = await getServerSession(authOptions)
+        
+            if(!session || !session.user) {
+                redirect("/")
+            }
+        
     return (
         <Container>
             <main className="flex flex-col mt-9 mb-2">
@@ -14,6 +25,9 @@ export default function NewCustomer() {
                 <h1 className="text-3xl font-bold">Novo Cliente</h1>
 
                 </div>
+
+                <NewCustomerForm/>
+
             </main>
 
         </Container>
