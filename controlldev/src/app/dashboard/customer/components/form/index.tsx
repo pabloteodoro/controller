@@ -88,14 +88,7 @@ export function NewCustomerForm() {
 
                     <button type="submit" className="bg-blue-500 my-4 px-2 h-11 rounded text-white font-bold">
                         Cadastrar
-                    </button>
-            
-      
-          
-
-            
-            
-            
+                    </button>  
         </form>
     )
 }
