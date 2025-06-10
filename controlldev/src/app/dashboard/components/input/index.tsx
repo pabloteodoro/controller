@@ -1,4 +1,4 @@
-"use client"
+"use client" 
 
 
 import { RegisterOptions, UseFormRegister } from "react-hook-form";
@@ -17,7 +17,7 @@ interface InputProps {
 export function Input({name, placeholder, type, register, error, rules} : InputProps) {
     return(
         <>
-            <input className=" w-full border-2 rounde-md h-11 px-2" placeholder={placeholder} type={type}
+            <input className=" w-full border-2 rounded-md h-11 px-2" placeholder={placeholder} type={type}
             {...register(name, rules)}
             id={name}
             />
