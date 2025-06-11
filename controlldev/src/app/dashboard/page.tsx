@@ -60,6 +60,9 @@ export default async function Dashboard() {
 
 
             </table>
+            {tickets.length === 0 && (
+                <h1 className="px-2 md:px-0 text-gray-600">Você ainda não possuí nenhum chamado.</h1>
+            )}
 
 
             </main>
