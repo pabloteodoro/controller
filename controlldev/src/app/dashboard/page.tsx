@@ -22,12 +22,13 @@ export default async function Dashboard() {
         },
          include: {
             customer: true,
+        },
+        orderBy: {
+            created_at: "desc"
         }
     })
 
-    console.log(tickets)
-
-
+    
     return (
         <Container>
             <main className="mt-9 mb-2">

@@ -5,7 +5,7 @@ import { ModalContext } from "@/providers/modal"
 
 
 export function ModalTicket() {
-    const { handleModalVisible } = useContext(ModalContext);
+    const { handleModalVisible, ticket } = useContext(ModalContext);
     const modalRef = useRef<HTMLDivElement | null >(null);
 
     const handleModalClick = (e: MouseEvent<HTMLDivElement>) => {
@@ -32,7 +32,7 @@ export function ModalTicket() {
                     <h2 className="font-bold">
                         Nome:
                     </h2>
-                    <p>Problema no Computador</p>
+                    <p>{ticket?.ticket.name}</p>
 
                 </div>
 
@@ -40,7 +40,7 @@ export function ModalTicket() {
                     <h2 className="font-bold">
                         Descrição:
                     </h2>
-                    <p>Problema no Software</p>
+                    <p>{ticket?.ticket.description}</p>
 
                 </div>
 
@@ -52,30 +52,32 @@ export function ModalTicket() {
                     <h2 className="font-bold">
                         Nome:
                     </h2>
-                    <p>Mercado</p>
+                    <p>{ticket?.customer?.name}</p>
                 </div>
 
                 <div className="flex flex-wrap gap-1 mb-2">
                     <h2 className="font-bold">
                         Telefone:
                     </h2>
-                    <p>981693-226</p>
+                    <p>{ticket?.customer?.phone}</p>
                 </div>
 
                 <div className="flex flex-wrap gap-1 mb-2">
                     <h2 className="font-bold">
                         E-mail:
                     </h2>
-                    <p>mercado@gmail.com</p>
+                    <p>{ticket?.customer?.email}</p>
                 </div>
 
+              {ticket?.customer?.address && (
                 <div className="flex flex-wrap gap-1 mb-2">
                     <h2 className="font-bold">
                         Endereço:
                     </h2>
-                    <p>Rua Cliente, 1090 - São Paulo/SP </p>
+                    <p>{ticket.customer.address}</p>
                 </div>
 
+              )}
 
 
 
