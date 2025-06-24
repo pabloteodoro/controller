@@ -24,7 +24,6 @@ export async function GET(request: Request) {
         return NextResponse.json({ error: "Customer not found"}, {status: 400})
     }
 
-    return NextResponse.json({ message: "Recebido"})
 }
 
 export async function DELETE(request: Request) {
